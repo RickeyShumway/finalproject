@@ -39,11 +39,11 @@ $('#commentSection').on('click', '.delete', function () {
 });
 
 $('#commentSection').on('submit', '.textAndSubmit', function () {
-    let editedCom = $(".editComment").val();
-    console.log(this)
+    let editedCom = $(this).children().val();
+    console.log(editedCom)
     let parent = $(this).parent();
     let sibling = $(parent).children()[3];
-    $(sibling).text(editedCom); 
+    $(sibling).text(editedCom).val();
     $(this).toggle();
     return false;
 })
